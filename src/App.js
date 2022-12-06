@@ -31,7 +31,7 @@ function App() {
     fetch(`http://localhost:3000/shows/${id}`, {
       method: "DELETE"
     }).then(resp => resp.json())
-      .then(fetchAllShows())
+      fetchAllShows()
     }
  
 
