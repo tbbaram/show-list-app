@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { Router, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+import NewShowControlledForm from "./components/NewShowControlledForm";
+import ShowsListContainer from "./components/ShowsListContainer";
+
+
+
+// create function w useEffect to fecth all data(shows)
 
 function App() {
+  const [showList, setShowList] = useState([])
+
+  function fetchAllShows() {
+    fetch("http://localhost:3000/shows")
+      .then(resp => resp.json())
+      .then(data => setShowList(data))
+  }
+
+    const handleAddShow = (newShow) => {
+      setShowList([...showList, newShow])
+    }
+    
+    useEffect(() => {
+    fetchAllShows()
+  }, []
+  )
+
+  const handleRemoveShow = (id) => {
+    fetch(`http://localhost:3000/shows/${id}`, {
+      method: "DELETE"
+    }).then(resp => resp.json())
+      .then(fetchAllShows())
+    }
+ 
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <Header />
+        <Routes>
+            <Route path="/shows" element={<ShowsListContainer showList={showList} handleRemoveShow={handleRemoveShow} />} />
+            <Route path="/shows/new" element={<NewShowControlledForm handleAddShow={handleAddShow} />} />
+        </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
