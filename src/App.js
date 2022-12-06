@@ -5,10 +5,6 @@ import Navbar from "./components/Navbar";
 import NewShowControlledForm from "./components/NewShowControlledForm";
 import ShowsListContainer from "./components/ShowsListContainer";
 
-
-
-// create function w useEffect to fecth all data(shows)
-
 function App() {
   const [showList, setShowList] = useState([])
 
@@ -34,8 +30,6 @@ function App() {
       fetchAllShows()
     }
  
-
-
   return (
     <div>
       <Navbar />
