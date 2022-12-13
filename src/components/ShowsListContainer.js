@@ -6,16 +6,18 @@ function ShowsListContainer({ showList, handleRemoveShow }) {
         
         return (
         <div>
-            {showList.map((show, id) => {
-                return <ul key={id}>
+            {showList.map((show) => {
+                console.log(show)
+                return (
+                <div key={show.id}>
                 <ShowCard 
                 show={show} 
                 key={show.id}
                 />
                 <button onClick={() => handleRemoveShow(show.id)}>Remove Show</button>
-                </ul>
+                </div>
+                )
             })}
-            
         </div>
         )
     }

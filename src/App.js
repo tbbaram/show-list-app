@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import NewShowControlledForm from "./components/NewShowControlledForm";
@@ -8,26 +8,24 @@ import ShowsListContainer from "./components/ShowsListContainer";
 function App() {
   const [showList, setShowList] = useState([])
 
+    const handleAddShow = () => {
+      fetchAllShows()
+    }
+    
+    useEffect(() => {
+  fetchAllShows();
+  }, [])
+
   function fetchAllShows() {
     fetch("http://localhost:3000/shows")
       .then(resp => resp.json())
       .then(data => setShowList(data))
   }
 
-    const handleAddShow = (newShow) => {
-      setShowList([...showList, newShow])
-    }
-    
-    useEffect(() => {
-    fetchAllShows()
-  }, []
-  )
-
   const handleRemoveShow = (id) => {
     fetch(`http://localhost:3000/shows/${id}`, {
       method: "DELETE"
-    }).then(resp => resp.json())
-      fetchAllShows()
+    }).then(resp => fetchAllShows())
     }
  
   return (
