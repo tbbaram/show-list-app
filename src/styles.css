@@ -4,6 +4,8 @@
 
 body {
     margin: 0;
+    background-color: grey;
+    text-align: center;
 }
 
 .nav {
@@ -44,3 +46,4 @@ body {
 .nav li:hover {
     background-color: #777;
 }
+

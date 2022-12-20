@@ -37,8 +37,10 @@ function NewShowControlledForm({ handleAddShow }) {
             },
             body: JSON.stringify(newShow)
         })
-        handleAddShow(newShow)
+        .then(r => r.json())
+        .then(newShow => handleAddShow(newShow))
         }
+        
 
         return (
         <div className="wrapper">

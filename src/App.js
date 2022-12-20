@@ -8,8 +8,9 @@ import ShowsListContainer from "./components/ShowsListContainer";
 function App() {
   const [showList, setShowList] = useState([])
 
-    const handleAddShow = () => {
-      fetchAllShows()
+    const handleAddShow = (newShow) => {
+    const newArr = [...showList, newShow]
+      setShowList(newArr)
     }
     
     useEffect(() => {
@@ -22,17 +23,17 @@ function App() {
       .then(data => setShowList(data))
   }
 
-  const handleRemoveShow = (id) => {
-    fetch(`http://localhost:3000/shows/${id}`, {
-      method: "DELETE"
-    }).then(resp => fetchAllShows())
-    }
- 
+const handleRemoveShow = (id) => {
+  fetch(`http://localhost:3000/shows/${id}`, {
+    method: "DELETE"
+  }).then(res => fetchAllShows(res))
+ }
+
   return (
     <div>
       <Navbar />
-      <Header />
         <Routes>
+            <Route path="/" element={<Header />} />
             <Route path="/shows" element={<ShowsListContainer showList={showList} handleRemoveShow={handleRemoveShow} />} />
             <Route path="/shows/new" element={<NewShowControlledForm handleAddShow={handleAddShow} />} />
         </Routes>

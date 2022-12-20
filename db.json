@@ -1,9 +1,9 @@
 {
   "shows": [
     {
-      "date": "1",
-      "venue": "22",
-      "cityAndState": "3",
+      "date": "11/14/12",
+      "venue": "Stubbs",
+      "cityAndState": "Austin, TX",
       "id": 2
     },
     {
@@ -13,15 +13,15 @@
       "id": 3
     },
     {
-      "date": "111",
-      "venue": "111",
-      "cityAndState": "111",
+      "date": "asd",
+      "venue": "asd",
+      "cityAndState": "asd",
       "id": 4
     },
     {
-      "date": "13u",
-      "venue": "iiuqrioqioIJOQOI",
-      "cityAndState": "IOWEIJOFJIO",
+      "date": "sdaf",
+      "venue": "asdf",
+      "cityAndState": "asdf",
       "id": 5
     }
   ]

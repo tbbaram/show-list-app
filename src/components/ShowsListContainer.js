@@ -7,7 +7,6 @@ function ShowsListContainer({ showList, handleRemoveShow }) {
         return (
         <div>
             {showList.map((show) => {
-                console.log(show)
                 return (
                 <div key={show.id}>
                 <ShowCard 
