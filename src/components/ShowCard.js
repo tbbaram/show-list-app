@@ -4,9 +4,11 @@ function ShowCard({ show }) {
 
     return (
         <div className="show">
-            <br></br>{show.date} 
-            <br></br>{show.venue}
-            <br></br>{show.cityAndState}
+            <h3>{show.date}
+            <br></br>
+            {show.venue}
+            <br></br>
+            {show.cityAndState}</h3>
         </div>
     )
 

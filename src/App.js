@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
+import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import NewShowControlledForm from "./components/NewShowControlledForm";
 import ShowsListContainer from "./components/ShowsListContainer";
@@ -12,11 +12,11 @@ function App() {
     const newArr = [...showList, newShow]
       setShowList(newArr)
     }
-    
-    useEffect(() => {
-  fetchAllShows();
-  }, [])
 
+    useEffect(() => {
+      fetchAllShows();
+      }, [])
+    
   function fetchAllShows() {
     fetch("http://localhost:3000/shows")
       .then(resp => resp.json())
@@ -33,7 +33,7 @@ const handleRemoveShow = (id) => {
     <div>
       <Navbar />
         <Routes>
-            <Route path="/" element={<Header />} />
+            <Route path="/" element={<Home />} />
             <Route path="/shows" element={<ShowsListContainer showList={showList} handleRemoveShow={handleRemoveShow} />} />
             <Route path="/shows/new" element={<NewShowControlledForm handleAddShow={handleAddShow} />} />
         </Routes>

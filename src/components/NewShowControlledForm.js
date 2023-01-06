@@ -40,11 +40,24 @@ function NewShowControlledForm({ handleAddShow }) {
         .then(r => r.json())
         .then(newShow => handleAddShow(newShow))
         }
-        
 
+        //styles for inputs
+
+        const inputStyles = {
+            position: "absolute",
+            top: "0",
+            bottom: "500px",
+            left: "0",
+            right: "0",
+            margin: "auto",
+            height: "20px",
+            width: "30%",
+            padding: "40px"
+        }
+        
         return (
         <div className="wrapper">
-            <form onSubmit={handleSubmit}>
+            <form style={inputStyles} onSubmit={handleSubmit}>
                 <input
                 name="date"
                 type="text"

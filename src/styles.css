@@ -47,3 +47,13 @@ body {
     background-color: #777;
 }
 
+h3 {
+    border-style: solid;
+    border-color: lightblue;
+    margin-right: 400px;
+    margin-left: 400px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-style: oblique;
+}
+
