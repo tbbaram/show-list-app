@@ -45,13 +45,12 @@ function NewShowControlledForm({ handleAddShow }) {
 
         const inputStyles = {
             position: "absolute",
-            top: "0",
             bottom: "500px",
             left: "0",
             right: "0",
             margin: "auto",
-            height: "20px",
-            width: "30%",
+            height: "30px",
+            width: "20%",
             padding: "40px"
         }
         
