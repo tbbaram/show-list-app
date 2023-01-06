@@ -9,4 +9,4 @@ The functionality of this app allows you to create a calandar for a touring band
 # Getting the app started-
 * Once in the folder inside of the terminal, type "npm install" in order to get the depencencies needed
 * Once that has been installed, type "npm start" within the same terminal to open a browser and see the app
-* In order to get the JSON running, you need to run the command "json-server --watch db.json" inside a terminal in order to retrieve the data
+* In order to get the JSON running, you need to run the command "json-server --watch db.json" inside a terminal within the same folder where the repo was installed in order to retrieve the data
