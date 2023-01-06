@@ -1,5 +1,5 @@
 # Show List App-
-The functionality of this app allows you to create a calandar for a touring band. You have an input for date, venue, and the city and state and the ability to delete them if you wanted to go month by month
+The functionality of this app allows you to create a calandar for a touring band. You have an input for date, venue, and the city and state and the ability to delete them as well as sort by date
 
 # Go to GitHub and copy the repo of the app-
 * First, open up a terminal and navigate to a folder where you'd like the repo
