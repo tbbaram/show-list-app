@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import NewShowControlledForm from "./components/NewShowControlledForm";
 import ShowsListContainer from "./components/ShowsListContainer";
+import ShowDetails from "./components/ShowDetails";
 
 function App() {
   const [showList, setShowList] = useState([])
@@ -36,7 +37,9 @@ const handleRemoveShow = (id) => {
             <Route path="/" element={<Home />} />
             <Route path="/shows" element={<ShowsListContainer showList={showList} handleRemoveShow={handleRemoveShow} />} />
             <Route path="/shows/new" element={<NewShowControlledForm handleAddShow={handleAddShow} />} />
+            <Route path="/shows/:showId" element={<ShowDetails showList={showList} />} />
         </Routes>
+        
     </div>
   )
 }

@@ -17,7 +17,6 @@ function NewShowControlledForm({ handleAddShow }) {
         setCityAndState(e.target.value)
     }
 
- 
     function handleSubmit(e) {
         e.preventDefault()
         setDate("")
@@ -84,7 +83,6 @@ function NewShowControlledForm({ handleAddShow }) {
 
         </div>
     )
-
 }
 
 export default NewShowControlledForm
