@@ -6,8 +6,6 @@ function ShowDetails ({ showList }) {
     let { showId } = useParams()
     
     const showToShow = showList.filter(show => show.id == showId)[0]
-    
-    console.log(showToShow)
 
     return (
     <div>

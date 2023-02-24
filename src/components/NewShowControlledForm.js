@@ -37,7 +37,7 @@ function NewShowControlledForm({ handleAddShow }) {
             body: JSON.stringify(newShow)
         })
         .then(r => r.json())
-        .then(newShow => handleAddShow(newShow))
+        .then(newData => handleAddShow(newData))
         }
 
         //styles for inputs

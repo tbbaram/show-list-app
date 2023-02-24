@@ -6,11 +6,12 @@ import NewShowControlledForm from "./components/NewShowControlledForm";
 import ShowsListContainer from "./components/ShowsListContainer";
 import ShowDetails from "./components/ShowDetails";
 
+
 function App() {
   const [showList, setShowList] = useState([])
 
     const handleAddShow = (newShow) => {
-    const newArr = [...showList, newShow]
+      const newArr = [...showList, newShow]
       setShowList(newArr)
     }
 
@@ -24,21 +25,26 @@ function App() {
       .then(data => setShowList(data))
   }
 
-const handleRemoveShow = (id) => {
-  fetch(`http://localhost:3000/shows/${id}`, {
-    method: "DELETE"
-  }).then(res => fetchAllShows(res))
- }
+  const handleRemoveShow = (id) => {
+    fetch(`http://localhost:3000/shows/${id}`, {
+      method: "DELETE"
+    }).then(setShowList(showList.filter(show => show.id !== id)))
+  }
+
+
+
 
   return (
     <div>
       <Navbar />
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/shows" element={<ShowsListContainer showList={showList} handleRemoveShow={handleRemoveShow} />} />
+            <Route path="/shows" element={<ShowsListContainer showList={showList} setShowList={setShowList} handleRemoveShow={handleRemoveShow} />} />
             <Route path="/shows/new" element={<NewShowControlledForm handleAddShow={handleAddShow} />} />
             <Route path="/shows/:showId" element={<ShowDetails showList={showList} />} />
         </Routes>
+        
+        
         
     </div>
   )
