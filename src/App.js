@@ -15,6 +15,11 @@ function App() {
       setShowList(newArr)
     }
 
+    const filterShow = (id) => {
+      setShowList(showList.filter(show => show.id !== id))
+    }
+
+
     useEffect(() => {
       fetchAllShows();
       }, [])
@@ -28,7 +33,7 @@ function App() {
   const handleRemoveShow = (id) => {
     fetch(`http://localhost:3000/shows/${id}`, {
       method: "DELETE"
-    }).then(setShowList(showList.filter(show => show.id !== id)))
+    }).then(filterShow(id))
   }
 
 
